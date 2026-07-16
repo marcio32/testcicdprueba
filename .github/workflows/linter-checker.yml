@@ -17,9 +17,7 @@ jobs:
       # Acá podés agregar pasos para copiar los archivos a la carpeta local que quieras
       - name: Copiar archivos a mi carpeta de desarrollo
         shell: cmd
-        run: |
-          xcopy . "C:\Users\Marcio\Downloads\Curso 17hs\publicar" /E /I /Y  # (En Windows)
-          # o 'cp -r . /var/www/miapp' si estás en una Raspberry o Linux
+        run: xcopy . "C:\Users\Marcio\Downloads\Curso 17hs\publicar" /E /I /Y
 
       # 2. Configura el entorno de Node.js
       - name: Setup Node.js
