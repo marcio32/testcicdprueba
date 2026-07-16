@@ -8,12 +8,17 @@ on:
 
 jobs:
   quality-check:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
-      # 1. Descarga el código del repositorio en la máquina virtual de GitHub
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      # Acá podés agregar pasos para copiar los archivos a la carpeta local que quieras
+      - name: Copiar archivos a mi carpeta de desarrollo
+        run: |
+          xcopy . "C:\Users\Marcio\Downloads\Curso 17hs\publicar" /E /I /Y  # (En Windows)
+          # o 'cp -r . /var/www/miapp' si estás en una Raspberry o Linux
 
       # 2. Configura el entorno de Node.js
       - name: Setup Node.js
